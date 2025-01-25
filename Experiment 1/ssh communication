@@ -1,0 +1,34 @@
+Experiment 1 Command
+
+
+Router 0
+---------------
+
+Router(config-if)#exit
+Router(config)#hostname CNSRouter
+CNSRouter(config)#enable password Bappi@2003
+CNSRouter(config)#ip domain-name cisco.com
+CNSRouter(config)#username Admin password Bappi@2003
+CNSRouter(config)#crypto key ?
+CNSRouter(config)#crypto key genetate ?
+CNSRouter(config)#crypto key generate  rsa
+How many bits in the modulus [512]: 1024
+CNSRouter(config)#line vty ?
+CNSRouter(config)#line vty 0 15
+CNSRouter(config-line)#login local
+CNSRouter(config-line)#transport input ssh
+CNSRouter(config-line)#exit
+
+
+pc 0
+------
+
+C:\>ssh -l Admin 10.10.10.3
+Password:
+CNSRouter>en
+Password: 
+CNSRouter#config t
+
+
+
+
